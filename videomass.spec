@@ -8,7 +8,8 @@ License:	GPLv3+
 Group:		Video
 Url:		https://github.com/jeanslack/Videomass
 Source0:	https://github.com/jeanslack/Videomass/archive/refs/tags/v%{version}/%{name}-%{version}.tar.gz
-BuildRequires:	pkgconfig(python2)
+BuildRequires:	pkgconfig(python3)
+BuildRequires:	python%{pyver}dist(hatchling)
 BuildRequires:	python%{pyver}dist(pypubsub)
 BuildRequires:	python%{pyver}dist(requests)
 BuildRequires:	python%{pyver}dist(wxpython)
