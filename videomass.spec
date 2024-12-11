@@ -2,7 +2,7 @@
 
 Summary:	Cross-platform GUI for FFmpeg and yt-dlp
 Name:		videomass
-Version:	5.0.20
+Version:	5.0.21
 Release:	1
 License:	GPLv3+
 Group:		Video
