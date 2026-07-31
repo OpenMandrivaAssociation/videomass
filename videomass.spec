@@ -2,8 +2,8 @@
 
 Summary:	Cross-platform GUI for FFmpeg and yt-dlp
 Name:		videomass
-Version:	5.0.25
-Release:	2
+Version:	6.1.20
+Release:	1
 License:	GPLv3+
 Group:		Video
 Url:		https://github.com/jeanslack/Videomass
@@ -55,7 +55,7 @@ Videomass is a powerful, multitasking and cross-platform graphical user
 #-----------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n %{oname}-%{version}
+%autosetup -p1 -n Videomass-6.1.20
 
 %build
 %py_build
