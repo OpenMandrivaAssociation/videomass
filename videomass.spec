@@ -2,7 +2,7 @@
 
 Summary:	Cross-platform GUI for FFmpeg and yt-dlp
 Name:		videomass
-Version:	6.1.20
+Version:	6.1.22
 Release:	1
 License:	GPLv3+
 Group:		Video
@@ -13,14 +13,16 @@ BuildRequires:	python%{pyver}dist(babel)
 BuildRequires:	python%{pyver}dist(hatchling)
 BuildRequires:	python%{pyver}dist(pypubsub)
 BuildRequires:	python%{pyver}dist(requests)
-BuildRequires:	python%{pyver}dist(wxpython)
+# 4.2.5 is the Python 3.15 module. 4.2.5-1 is still Python 3.14.
+BuildRequires:	python%{pyver}dist(wxpython) >= 4.2.5
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(setuptools)
 BuildRequires:	python%{pyver}dist(wheel)
 #BuildRequires:	ffmpeg
 
-Requires:	python3
-Requires:	python%{pyver}dist(wxpython)
+Requires:	python
+# 4.2.5 is the Python 3.15 module. 4.2.5-1 is still Python 3.14.
+Requires:	python%{pyver}dist(wxpython) >= 4.2.5
 
 Recommends:	ffmpeg
 Recommends:	yt-dlp
@@ -42,8 +44,8 @@ Videomass is a powerful, multitasking and cross-platform graphical user
 %license LICENSE
 %doc README.md
 %{_bindir}/%{name}
-%{python3_sitelib}/%{name}/
-%{python3_sitelib}/%{name}-*.*-info/
+%{python_sitelib}/%{name}/
+%{python_sitelib}/%{name}-*.*-info/
 %{_datadir}/applications/io.github.jeanslack.%{name}.desktop
 %{_datadir}/pixmaps/%{name}.png
 %{_iconsdir}/hicolor/*/apps/%{name}.png
@@ -55,7 +57,7 @@ Videomass is a powerful, multitasking and cross-platform graphical user
 #-----------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n Videomass-6.1.20
+%autosetup -p1 -n Videomass-%{version}
 
 %build
 %py_build
